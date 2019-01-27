@@ -1,5 +1,9 @@
-# pi-motion-setup
+echo "Update apt-get"
+sudo apt-get update
+echo "Upgrade apt-get"
+sudo apt-get upgrade
+echo "Enable the camera"
+sed -i '/start_x=0/c\start_x=1' /boot/config.txt
 
-This script is intended for Debian stretch. It's intended to get a Raspiberry Pi set up for capturing video. It's ideal for keeping an eye on pets that might misbehave when you are not in the room
 
 
