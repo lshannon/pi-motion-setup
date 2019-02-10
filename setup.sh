@@ -9,7 +9,7 @@ echo "sudo apt-get update"
 echo "sudo apt-get upgrade"
 echo "reboot"
 echo "If your OS is updated type 'Y' to continue"
-read -s CONFIRMATION
+read CONFIRMATION
 if [ "$CONFIRMATION" != "Y" ]; then
   echo "Script is terminating. Update the OS and reboot, then re-run this"
   exit 0;
@@ -17,7 +17,8 @@ fi
 echo "Setting Up A Stock Stretch OS Installation To Stream video with Motion"
 echo "Enable the camera"
 sudo sh -c "sed -i '/start_x=0/c\start_x=1' /boot/config.txt"
-echo "Install Motion"
+echo "Camera Enabled"
+echo "Install Motion - You will be prompted to type 'Y' to proceed"
 sudo apt-get install motion
 echo "Activate the driver"
 sudo modprobe bcm2835-v4l2
@@ -34,3 +35,6 @@ sudo sh -c "sed -i '/height 240/c\height 480' /etc/motion/motion.con"
 sudo sh -c "sed -i '/stream_quality 50/c\stream_quality 90' /etc/motion/motion.conf"
 sudo sh -c "sed -i '/stream_localhost on/c\stream_localhost off' /etc/motion/motion.conf"
 sudo sh -c "sed -i '/framerate 2/c\framerate 1000' /etc/motion/motion.conf"
+echo "Script Completed"
+echo "Any errors will appear above"
+echo "Reboot to start using the camera"
