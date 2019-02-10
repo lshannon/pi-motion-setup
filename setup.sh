@@ -15,12 +15,13 @@ echo "Turn on the camera as a background process"
 sudo sh -c "sed -i '/start_motion_daemon=no/c\start_motion_daemon=yes' /etc/default/motion"
 echo "Back up the motion.conf file"
 sudo cp /etc/motion/motion.conf /etc/motion/motion.conf.bak
+echo "Configure Motion for stream"
 sudo sh -c "sed -i '/daemon off/c\daemon an' /etc/motion/motion.conf"
 sudo sh -c "sed -i '/width 320/c\width 640' /etc/motion/motion.conf"
 sudo sh -c "sed -i '/height 240/c\height 480' /etc/motion/motion.con"
-stream_quality 50 stream_quality 90
-stream_localhost on stream_localhost off
-framerate 2 framerate 1000
+sudo sh -c "sed -i '/stream_quality 50/c\stream_quality 90' /etc/motion/motion.conf"
+sudo sh -c "sed -i '/stream_localhost on/c\stream_localhost off' /etc/motion/motion.conf"
+sudo sh -c "sed -i '/framerate 2/c\framerate 1000' /etc/motion/motion.conf"
 
 
 
