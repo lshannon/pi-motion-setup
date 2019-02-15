@@ -31,7 +31,7 @@ sudo cp /etc/motion/motion.conf /etc/motion/motion.conf.bak
 echo "Configure Motion for stream"
 sudo sh -c "sed -i '/daemon off/c\daemon on' /etc/motion/motion.conf"
 sudo sh -c "sed -i '/width 320/c\width 640' /etc/motion/motion.conf"
-sudo sh -c "sed -i '/height 240/c\height 480' /etc/motion/motion.con"
+sudo sh -c "sed -i '/height 240/c\height 480' /etc/motion/motion.conf"
 sudo sh -c "sed -i '/stream_quality 50/c\stream_quality 90' /etc/motion/motion.conf"
 sudo sh -c "sed -i '/stream_localhost on/c\stream_localhost off' /etc/motion/motion.conf"
 sudo sh -c "sed -i '/framerate 2/c\framerate 1000' /etc/motion/motion.conf"
